@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <label for="roles"> <h2> ROLES </h2>  </label>
+        <select class="form-select" name="" id="planes" [(ngModel)]="roles">
+            <option value="Administrador">Administrador</option>
+            <option value="Editor">Editor</option>
+            <option value="Lector">Lector</option>
+        </select>
+    </div>
+    <div class="row">
+        <div [ngSwitch]="roles">
+            <span *ngSwitchCase="'Administrador'"> 🤵Acceso completo a todas las funciones.</span>
+            <span *ngSwitchCase="'Editor'"> 💻Puede editar contenido, pero no gestionar usuarios.</span>
+            <span *ngSwitchCase="'Lector'"> 📖Solo puede ver contenido.</span>
+            <span *ngSwitchDefault>Seleccione un rol para ver las opciones
+disponibles</span>
+        </div>
+    </div>
+</div>

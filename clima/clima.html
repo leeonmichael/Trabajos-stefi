@@ -1,0 +1,27 @@
+<div class="container">
+    <h2>Clasificador de Clima</h2>
+
+    <input type="text"
+        placeholder="Ingrese la temperatura"
+        [(ngModel)]="temperatura">
+
+    <div [ngSwitch]="obtenerEstadoClima()">
+
+        <p *ngSwitchCase="'caliente'">
+            🔥Está caliente afuera.
+        </p>
+
+        <p *ngSwitchCase="'templado'">
+            ☁️Está templado afuera.
+        </p>
+
+        <p *ngSwitchCase="'frio'">
+            ❄️Hace frío afuera.
+        </p>
+
+        <p *ngSwitchDefault>
+            ❌Temperatura no válida.
+        </p>
+
+    </div>
+</div>

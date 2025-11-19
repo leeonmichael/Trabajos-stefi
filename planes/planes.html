@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <label for="planes"> <h2> PLANES </h2></label>
+        <select class="form-select" name="" id="planes" [(ngModel)]="status">
+            <option value="planbasico"> Plan Basico</option>
+            <option value="planestandar">Plan Estandar</option>
+            <option value="planpremium">Plan Premium</option>
+        </select>
+    </div>
+    <div class="row">
+        <div [ngSwitch]="status">
+            <span *ngSwitchCase="'planbasico'"> 🪙Acceso limitado a contenido</span>
+            <span *ngSwitchCase="'planestandar'"> 💸Acceso completo a todo el contenido.</span>
+            <span *ngSwitchCase="'planpremium'"> 💎Acceso completo más contenido exclusivo.</span>
+            <span *ngSwitchDefault>Seleccione un plan para ver las opciones disponibles</span>
+        </div>
+    </div>
+</div>
